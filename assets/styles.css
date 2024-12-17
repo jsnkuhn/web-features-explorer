@@ -1,0 +1,436 @@
+:root {
+  --baseline-low-bg: #e8f0fe;
+  --baseline-low-label-bg: #d2e3fc;
+  --baseline-high-bg: #e6f4ea;
+  --baseline-high-label-bg: #ceead6;
+  --baseline-limited-bg: #f1f3f4;
+  --baseline-limited-label-bg: #e3e6e8;
+  --browser-supported-bg: #ceead6;
+  --browser-unsupported-bg: #f5d6d6;
+  --text: black;
+  --background: white;
+  --background-alt: #f5f5f5;
+  --sub-text: #666;
+  --margin: 1rem;
+}
+
+@media (min-width: 600px) {
+  :root {
+    --margin: 2rem;
+  }
+}
+
+html {
+  font-size: 1rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: var(--text);
+  background: var(--background);
+}
+
+body {
+  margin: var(--margin) 0;
+}
+
+header {
+  font-size: 1.5rem;
+  margin-block-end: var(--margin);
+  padding: 0 var(--margin);
+}
+
+header a {
+  text-decoration: none;
+  color: var(--text);
+  padding-inline-start: 3rem;
+  background-image: url(logo.png);
+  background-repeat: no-repeat;
+  background-size: 2rem;
+  background-position: 0 center;
+}
+
+h1 {
+  margin: var(--margin) 0;
+  font-size: 1rem;
+}
+
+h1 img {
+  height: 2rem;
+}
+
+.intro {
+  margin: var(--margin) 0;
+}
+
+.intro dl {
+  display: grid;
+  grid-template-columns: max-content auto;
+  gap: 0.5rem;
+}
+
+.intro dl dt {
+  font-weight: bold;
+}
+
+.intro dl dd {
+  margin: 0;
+}
+
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+h3 .subtext {
+  font-size: small;
+  font-weight: normal;
+}
+
+code {
+  background: #0001;
+  padding: 0.125rem;
+  font-size: 0.9rem;
+  border-radius: 0.125rem;
+}
+
+.feature {
+  padding: var(--margin);
+  border-radius: 0.5rem;
+  margin-block-start: var(--margin);
+}
+
+.feature.mini {
+  padding: calc(var(--margin) / 2);
+  margin-block-start: calc(var(--margin) / 2);
+}
+
+.baseline-false {
+  background: var(--baseline-limited-bg);
+}
+
+.baseline-low {
+  background: var(--baseline-low-bg);
+}
+
+.baseline-high {
+  background: var(--baseline-high-bg);
+}
+
+.feature .header {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.feature h2,
+.feature h1 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.feature > p {
+  margin: var(--margin) 0;
+  line-height: 1.6;
+}
+
+.feature.mini > p {
+  margin: 0;
+}
+
+.feature.short > p {
+  margin: 1rem 0;
+}
+
+.feature.short h2 a {
+  text-decoration: none;
+  color: var(--text);
+}
+
+.availability {
+  --bg: var(--baseline-limited-label-bg);
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+  background: var(--bg);
+  font-weight: bold;
+  font-size: 0.75rem;
+  border: 2px solid color-mix(in srgb, var(--bg) 90%, black);
+  padding-inline-start: 2rem;
+  background-repeat: no-repeat;
+  background-position: 0.25rem center;
+  background-size: 1.5rem;
+  background-image: url(https://web-platform-dx.github.io/web-features/assets/img/baseline-limited-icon.svg);
+  margin-left: auto;
+}
+
+.baseline-low .availability {
+  --bg: var(--baseline-low-label-bg);
+  background-image: url(https://web-platform-dx.github.io/web-features/assets/img/baseline-newly-icon.svg);
+}
+
+.baseline-high .availability {
+  --bg: var(--baseline-high-label-bg);
+  background-image: url(https://web-platform-dx.github.io/web-features/assets/img/baseline-widely-icon.svg);
+}
+
+.tags {
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin: calc(var(--margin) / 2) 0;
+}
+
+.tags .tag {
+  padding: 0.125rem 0.25rem;
+  border-radius: 0.25rem;
+  background: var(--background);
+  border: 1px solid var(--text);
+}
+
+.compat {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+}
+
+.compat-full {
+  display: block;
+}
+
+.compat .browser {
+  --bg: var(--browser-unsupported-bg);
+  padding: 1.25rem 0.55rem 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  border: 2px solid color-mix(in srgb, var(--bg) 90%, black);
+  background-color: var(--bg);
+  background-position: center 0.25rem;
+  background-repeat: no-repeat;
+  background-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 4rem;
+}
+
+.compat-full .browser {
+  padding: 0.5rem 0.5rem 0.5rem 3rem;
+  border: none;
+  background-position: -0.5rem center;
+  background-size: 3rem;
+  background-blend-mode: overlay;
+  margin: 0.125rem 0;
+  display: block;
+}
+
+.compat .browser.supported {
+  --bg: var(--browser-supported-bg);
+}
+
+.compat .browser-chrome,
+.compat .browser-chrome_android {
+  background-image: url(./chrome.svg);
+}
+
+.compat .browser-firefox,
+.compat .browser-firefox_android {
+  background-image: url(./firefox.svg);
+}
+
+.compat .browser-edge {
+  background-image: url(./edge.svg);
+}
+
+.compat .browser-safari,
+.compat .browser-safari_ios {
+  background-image: url(./safari.svg);
+}
+
+.compat .browser .name {
+  font-weight: bold;
+}
+
+.compat .browser .date,
+.compat .browser .bug,
+.compat .browser .position {
+  font-size: 0.75rem;
+}
+
+.compat .position {
+  color: black;
+  font-weight: bold;
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+  margin: 0.25rem 0 0 0;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  line-height: 2;
+}
+
+.compat .position-oppose,
+.compat .position-negative {
+  background: color-mix(in srgb, var(--browser-unsupported-bg) 90%, black);
+}
+
+.compat .position-support,
+.compat .position-positive {
+  background: color-mix(in srgb, var(--browser-supported-bg) 90%, black);
+}
+
+.feature .resources,
+.feature .resources li {
+  list-style: disc;
+  padding-inline-start: 0.5rem;
+  margin-inline-start: 0.5rem;
+}
+
+nav {
+  border-block-end: 2px solid;
+  padding: 0 var(--margin);
+}
+
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+  gap: 0.25rem;
+}
+
+nav a {
+  display: block;
+  padding: 0.5rem;
+}
+
+nav li {
+  border: 2px solid;
+  translate: 0 2px;
+}
+
+nav li.monthly {
+  background-image: linear-gradient(
+    to top right,
+    var(--baseline-high-label-bg),
+    var(--baseline-low-label-bg),
+    var(--baseline-limited-label-bg)
+  );
+}
+
+nav li.baseline-low {
+  background: var(--baseline-low-label-bg);
+}
+nav li.baseline-high {
+  background: var(--baseline-high-label-bg);
+}
+nav li.nobaseline {
+  background: var(--baseline-limited-label-bg);
+}
+
+main {
+  padding: 0 var(--margin);
+}
+
+.monthly-update-list {
+  display: grid;
+  gap: var(--margin);
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+}
+
+.monthly-update-list .month-entry {
+  padding: calc(var(--margin) / 2);
+  background: var(--background-alt);
+  border-radius: 0.5rem;
+}
+
+.monthly-update-list .month-entry h2 {
+  margin: 0 0 1rem 0;
+  font-size: 1.3rem;
+}
+
+.monthly-update-list .month-entry li {
+  padding: 0.125rem 0;
+}
+
+.month-update ul {
+  padding: calc(var(--margin) / 2);
+  border-radius: 0.5rem;
+  display: grid;
+  gap: calc(var(--margin) / 2);
+}
+
+.groups li {
+  padding: 0.25rem;
+}
+
+.groups li li {
+  margin-inline-start: 2rem;
+}
+
+.groups summary {
+  cursor: pointer;
+}
+
+.groups details[open] {
+  background-image: linear-gradient(to right, black 1px, transparent 0);
+  background-position: 0.3rem 1rem;
+  background-size: 100% calc(100% - 1rem);
+  background-repeat: no-repeat;
+}
+
+footer {
+  border-block-start: 2px solid;
+  margin-block-start: var(--margin);
+  color: var(--sub-text);
+  font-size: smaller;
+  padding: 0 var(--margin);
+}
+
+#timeline {
+  overflow-x: auto;
+  overflow-y: auto;
+  height: calc(100vh - 16rem);
+  display: grid;
+  grid-auto-columns: 7rem;
+  font-size: 0.6rem;
+  gap: 1px;
+  background: var(--text);
+}
+
+#timeline .timeline-year {
+  grid-row: 1;
+  display: grid;
+  grid-auto-rows: 1rem;
+  width: 6.5rem;
+  background: var(--background);
+  padding: 0 0.25rem;
+}
+#timeline .timeline-year h2 {
+  font-size: inherit;
+  margin: 0;
+}
+
+#timeline .timeline-feature {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.feature-browser ul ul {
+  padding-inline-start: calc(2 * var(--margin));
+}
+
+.feature-browser .features li {
+  list-style-type: circle;
+  padding: 0.5rem 0;
+}
+
+.feature-browser .name {
+  padding: 0.25rem;
+  background: #eee;
+  border-radius: 0.25rem;
+}
+
+.edit-link {
+  margin-block-start: var(--margin);
+  display: block;
+  font-size: 0.8rem;
+}
